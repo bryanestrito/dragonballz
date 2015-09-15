@@ -1,0 +1,94 @@
+.default {
+    background: url('../imgs/goku4_sprite.png') no-repeat -6px -173px;
+    /*width: 35px;*/
+    /*height: 47px;*/
+}
+
+.stand {
+    background: url('../imgs/goku4_sprite.png') -51px -173px;
+    /*background-size: 35px 47px;*/
+    clip: rect(10px,50px,50px,10px);
+/*    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center bottom;*/
+    /*width: 35px;*/
+    /*height: 47px;*/
+}
+
+.stance {
+    background: url('../imgs/goku4_sprite.png') no-repeat -95px -177px !important;
+    width: 35px;
+    height: 43px;
+}
+
+.stance::after {
+    content: " ";
+    position: absolute;
+    width: 83px;
+    height: 88px;
+    z-index: 1;
+    top: -35px;
+    left: -23px;
+    background: url('../imgs/battle_effects.png') no-repeat -2361px -130px;
+}
+
+.forward {
+    background: url('../imgs/goku4_sprite.png') no-repeat -146px -181px;
+    /*width: 42px;*/
+    /*height: 39px;*/
+}
+
+.backward {
+    background: url('../imgs/goku4_sprite.png') no-repeat -199px -176px;
+    /*width: 37px;*/
+    /*height: 44px;*/
+}
+
+.dash1 {
+    background: url('../imgs/goku4_sprite.png') no-repeat -264px -168px;
+    /*width: 75px;*/
+    /*height: 24px;*/
+}
+
+.dash2 {
+    background: url('../imgs/goku4_sprite.png') no-repeat -262px -197px;
+    /*width: 78px;*/
+    /*height: 14px;*/
+}
+
+.dash3 {
+    background: url('../imgs/goku4_sprite.png') no-repeat -264px -215px;
+    /*width: 81px;*/
+    /*height: 5px;*/
+}
+
+.teleport1 {
+    background: url('../imgs/goku4_sprite.png') no-repeat -358px -169px;
+    /*width: 24px;*/
+    /*height: 51px;*/
+}
+
+.teleport2 {
+    background: url('../imgs/goku4_sprite.png') no-repeat -390px -150px;
+    /*width: 15px;*/
+    /*height: 70px;*/
+}
+
+.teleport3 {
+    background: url('../imgs/goku4_sprite.png') no-repeat -414px -142px;
+    /*width: 5px;*/
+    /*height: 78px;*/
+}
+
+.punchLeft {
+    background: url('../imgs/goku4_sprite.png') no-repeat -7px -241px;
+    /*width: 41px;*/
+    /*height: 43px;*/
+
+}
+
+.punchRight {
+    background: url('../imgs/goku4_sprite.png') no-repeat -61px -242px;
+    /*width: 38px;*/
+    /*height: 42px;*/
+}

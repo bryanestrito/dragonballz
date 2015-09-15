@@ -1,0 +1,47 @@
+.charge1 {
+	background: url('imgs/battle_effects.png') no-repeat -2361px -130px;
+	width: 83px;
+	height: 88px;
+}
+
+.charge2 {
+	background: url('imgs/battle_effects.png') no-repeat -2461px -117px;
+	width: 85px;
+	height: 100px;
+}
+
+.charge3 {
+	background: url('imgs/battle_effects.png') no-repeat -2567px -121px;
+	width: 77px;
+	height: 93px;
+}
+
+.charge4 {
+	background: url('imgs/battle_effects.png') no-repeat -2666px -123px;
+	width: 76px;
+	height: 87px;
+}
+
+.charge5 {
+	background: url('imgs/battle_effects.png') no-repeat -2752px -116px;
+	width: 84px;
+	height: 101px;
+}
+
+.charge6 {
+	background: url('imgs/battle_effects.png') no-repeat -2842px -118px;
+	width: 88px;
+	height: 102px;
+}
+
+.charge7 {
+	background: url('imgs/battle_effects.png') no-repeat -2939px -115px;
+	width: 81px;
+	height: 104px;
+}
+
+.charge8 {
+	background: url('imgs/battle_effects.png') no-repeat -3027px -115px;
+	width: 81px;
+	height: 104px;
+}

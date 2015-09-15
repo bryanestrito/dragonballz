@@ -1,0 +1,41 @@
+.goku_ss3_stance {
+	background: url('../imgs/goku3_sprite.png') no-repeat -113px -198px;
+	width: 36px;
+	height: 45px;
+}
+
+.goku_ss3_upward {
+	background: url('../imgs/goku3_sprite.png') no-repeat -23px -194px;
+	width: 33px;
+	height: 49px;
+}
+
+.goku_ss3_downward {
+	background: url('../imgs/goku3_sprite.png') no-repeat -67px -194px;
+	width: 36px;
+	height: 49px;
+}
+
+.goku_ss3_forward {
+	background: url('../imgs/goku3_sprite.png') no-repeat -165px -204px;
+	width: 37px;
+	height: 39px;
+}
+
+.goku_ss3_backward {
+	background: url('../imgs/goku3_sprite.png') no-repeat -215px -199px;
+	width: 37px;
+	height: 45px;
+}
+
+.goku_ss3_punchLeft {
+	background: url('imgs/goku3_sprite.png') no-repeat -32px -263px;
+	width: 37px;
+	height: 44px;
+}
+
+.goku_ss3_punchRight {
+	background: url('imgs/goku3_sprite.png') no-repeat -79px -263px;
+	width: 38px;
+	height: 44px;
+}

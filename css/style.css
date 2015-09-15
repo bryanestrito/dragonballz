@@ -1,0 +1,17 @@
+* {
+    position: absolute;
+}
+
+div#arena {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background-color: #5789AA;
+}
+
+div#goku_ss3 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    -webkit-transition: left 0.5s linear, top 0.5s linear;
+}
