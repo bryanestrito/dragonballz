@@ -5,9 +5,9 @@ var dbzCharacter = function (dbzId) {
     // prefix / suffix
     this.dbzClassPrefix = dbzId+"_";
     this.dbzLengthUnit = "px";
-    this.dbzUpwardDownwardDistance = 250;
-    this.dbzForwardBackwardDistance = 250;
-    this.dbzMovementDistance = 50;
+    this.dbzUpwardDownwardDistance = 1;
+    this.dbzForwardBackwardDistance = 1;
+    this.dbzMovementDistance = 10;
 
     // timning events
     this.dbzTimeout = 0;
@@ -23,24 +23,63 @@ var dbzCharacter = function (dbzId) {
 };
 
 dbzCharacter.prototype.checkInput = function (keys) {
+    var dbzChar = document.getElementById(this.dbzId);
+    var styleProp = window.getComputedStyle(dbzChar, null);
+    var matrix = styleProp.transform.split('(')[1];
+        matrix = matrix.split(')')[0];
+        matrix = matrix.split(',');
+
+    var currentLeft = parseInt(matrix[4]) + this.dbzLengthUnit;
+    var currentTop = parseInt(matrix[5]) + this.dbzLengthUnit;
+    var positiveLeft = parseInt(matrix[4]) + this.dbzMovementDistance + this.dbzLengthUnit;
+    var positiveTop = parseInt(matrix[5]) + this.dbzMovementDistance + this.dbzLengthUnit;
+    var negativeLeft = parseInt(matrix[4]) - this.dbzMovementDistance + this.dbzLengthUnit;
+    var negativeTop = parseInt(matrix[5]) - this.dbzMovementDistance + this.dbzLengthUnit;
     var chars = [];
 
     for (var i in keys) {
         if (!keys.hasOwnProperty(i)) continue;
-        chars.push(i);
+        chars[i] = true;
     }
 
-    
+    console.log(chars);
+
+    if (chars.forward && chars.upward) {
+        dbzChar.style.transform = 'translate('+positiveLeft+','+negativeTop+')';
+    } else if (chars.forward && chars.downward) {
+        dbzChar.style.transform = 'translate('+positiveLeft+','+positiveTop+')';
+    } else if (chars.backward && chars.upward) {
+        dbzChar.style.transform = 'translate('+negativeLeft+','+negativeTop+')';
+    } else if (chars.backward && chars.downward) {
+        dbzChar.style.transform = 'translate('+negativeLeft+','+positiveTop+')';
+    } else if (chars.forward && chars.backward) {
+        dbzChar.style.transform = 'translate('+currentLeft+','+currentTop+')';
+    } else if (chars.upward && chars.downward) {
+        dbzChar.style.transform = 'translate('+currentLeft+','+currentTop+')';
+    } else if (chars.upward) {
+        dbzChar.style.transform = 'translate('+currentLeft+','+negativeTop+')';
+    } else if (chars.backward) {
+        dbzChar.style.transform = 'translate('+negativeLeft+','+currentTop+')';
+    } else if (chars.downward) {
+        dbzChar.style.transform = 'translate('+currentLeft+','+positiveTop+')';
+    } else if (chars.forward) {
+        dbzChar.style.transform = 'translate('+positiveLeft+','+currentTop+')';
+    } else {
+        dbzChar.style.transform = 'translate('+currentLeft+','+currentTop+')';
+    }
 }
 
 dbzCharacter.prototype.dbzStance = function () {
-    document.getElementById(this.dbzId).className = this.dbzMovements.stance;
+    var dbzChar = document.getElementById(this.dbzId);
+    var styleProp = window.getComputedStyle(dbzChar, null);
+    var matrix = styleProp.transform.split('(')[1];
+        matrix = matrix.split(')')[0];
+        matrix = matrix.split(',');
 
-    elem = document.getElementById(this.dbzId);
-    prop = window.getComputedStyle(elem, null);
+    var currentLeft = parseInt(matrix[4]) + this.dbzLengthUnit;
+    var currentTop = parseInt(matrix[5]) + this.dbzLengthUnit;
 
-    document.getElementById(this.dbzId).style.left = prop.left;
-    document.getElementById(this.dbzId).style.top = prop.top;
+    dbzChar.style.transform = 'translate('+currentLeft+','+currentTop+')';
 };
 
 dbzCharacter.prototype.dbzMovement = function (movement, direction, incdec) {

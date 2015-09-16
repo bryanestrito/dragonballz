@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     // check if pressed key
     var down = false;
 
-    var keys = {};
     var moveKey = {};
 
     // instance player
@@ -37,47 +36,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     this.addEventListener("keydown", function (event) {
         var keyChar = getKeyChar(event);
-        // keys[keyChar] = true;
+        var d = movement.indexOf(keyChar);
 
-        if (d = movement.indexOf(keyChar)) {
+        if (d === parseInt(d, 10)) {
             moveKey[direction[d]] =  keyChar;
             goku_ss3.checkInput(moveKey);
         };
-
-        if (keyChar == "w") {
-            // if (down) return;
-            // down = true;
-                console.log(keyChar);
-            goku_ss3.dbzUpward();
-        };
-
-        if (keyChar == "s") {
-            // if (down) return;
-            // down = true;
-console.log(keyChar);
-            goku_ss3.dbzDownward();
-        }
-
-        if (keyChar == "d") {
-            // if (down) return;
-            // down = true;
-console.log(keyChar);
-            goku_ss3.dbzForward();
-        }
-
-        if (keyChar == "a") {
-            // if (down) return;
-            // down = true;
-            console.log(keyChar);
-            goku_ss3.dbzBackward();
-        }
     });
 
     this.addEventListener("keyup", function (event) {
         var keyChar = getKeyChar(event);
-            delete keys[keyChar];
+        var d = movement.indexOf(keyChar);
+        console.log('keyup: '+d);
+        if (d === parseInt(d, 10)) {
+            delete moveKey[direction[d]];
+        }
 
-        down = false;
+        // down = false;
         goku_ss3.dbzStance();
     });
 });

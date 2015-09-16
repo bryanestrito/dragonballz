@@ -11,7 +11,6 @@ div#arena {
 
 div#goku_ss3 {
     position: absolute;
-    top: 50px;
-    left: 50px;
-    -webkit-transition: left 0.5s linear, top 0.5s linear;
+    transform: translate(50px, 50px);
+    -webkit-transition: transform 0.5s linear;
 }
